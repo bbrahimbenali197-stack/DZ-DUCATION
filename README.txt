@@ -1,19 +1,4 @@
-DIGITAL DZ V6 — FONCTIONNALITÉS 1 À 15
-
-1. Connexion par code de carte PVC (prototype local)
-2. Tableau de bord apprenant
-3. Badges
-4. Attestation de progression
-5. Historique des scores
-6. Recherche des modules
-7. Favoris
-8. Téléchargements / ressources
-9. Vidéos & tutoriels YouTube
-10. Assistant IA / générateur de prompts
-11. Support WhatsApp (numéro à configurer)
-12. Page de commande
-13. Paiement à la livraison / formulaire
-14. Interface responsive mobile
-15. Rappels / notifications locales
-
-IMPORTANT : le contrôle de code est un prototype local, pas une sécurité commerciale. Pour la vente réelle avec cartes PVC et codes individuels, connecter la validation à Supabase / Edge Function. Le prix n'est pas fixé dans cette version.
+DZ ÉDUCATION — V1
+Prototype fonctionnel : primaire 1AP-5AP, moyen 1AM-4AM, lycée 1AS-3AS, BEM, BAC, quiz, examens blancs, résultats locaux, planning, assistant pédagogique et espace parent.
+Cette V1 est l'architecture de départ. Les chapitres complets, fiches de cours, banques d'exercices et corrections détaillées doivent être ajoutés et vérifiés selon les programmes officiels en vigueur.
+Aucune connexion email/Firebase dans cette version.
