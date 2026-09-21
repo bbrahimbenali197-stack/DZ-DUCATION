@@ -63,7 +63,7 @@ footer{background:#111821;color:#dfe4ea;padding:35px 18px;text-align:center}
 
 </style>
 
-<!-- DIGITAL DZ — Firebase SDK -->
+<!-- DIGITAL DZ — Firebase SDK — VERSION FINALE STABLE -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
@@ -438,20 +438,25 @@ function digitalDZInitFirebase(){
 async function digitalDZRegister(){
   if(!digitalDZFirebaseReady){ digitalDZSetMsg('regMsg','Firebase n’est pas encore disponible. Rechargez la page puis réessayez.'); return; }
   const name=(document.getElementById('regName')?.value||'').trim();
-  const email=(document.getElementById('regEmail')?.value||'').trim();
+  const email=(document.getElementById('regEmail')?.value||'').trim().toLowerCase();
   const password=document.getElementById('regPassword')?.value||'';
   if(!name||!email||password.length<6){ digitalDZSetMsg('regMsg','Remplissez les champs. Le mot de passe doit contenir au moins 6 caractères.'); return; }
   try{
     digitalDZSetMsg('regMsg','Création du compte…');
     const cred=await digitalDZAuth.createUserWithEmailAndPassword(email,password);
-    await cred.user.updateProfile({displayName:name});
-    await digitalDZDb.collection('users').doc(cred.user.uid).set({
-      email:email,
-      nom:name,
-      createdAt:firebase.firestore.FieldValue.serverTimestamp(),
-      lastLogin:firebase.firestore.FieldValue.serverTimestamp()
-    },{merge:true});
-    digitalDZSetMsg('regMsg','Compte créé avec succès ✓');
+    try{ await cred.user.updateProfile({displayName:name}); }catch(profileErr){ console.warn('Profil Firebase non mis à jour',profileErr); }
+    try{
+      await digitalDZDb.collection('users').doc(cred.user.uid).set({
+        email:email,
+        nom:name,
+        createdAt:firebase.firestore.FieldValue.serverTimestamp(),
+        lastLogin:firebase.firestore.FieldValue.serverTimestamp()
+      },{merge:true});
+      digitalDZSetMsg('regMsg','Compte créé avec succès ✓');
+    }catch(dbErr){
+      console.error(dbErr);
+      digitalDZSetMsg('regMsg','Compte Firebase créé ✓, mais le profil Firestore n’a pas encore été enregistré.');
+    }
   }catch(e){
     digitalDZSetMsg('regMsg',digitalDZFirebaseError(e));
   }
@@ -459,16 +464,18 @@ async function digitalDZRegister(){
 
 async function digitalDZLogin(){
   if(!digitalDZFirebaseReady){ digitalDZSetMsg('loginMsg','Firebase n’est pas encore disponible. Rechargez la page puis réessayez.'); return; }
-  const email=(document.getElementById('loginEmail')?.value||'').trim();
+  const email=(document.getElementById('loginEmail')?.value||'').trim().toLowerCase();
   const password=document.getElementById('loginPassword')?.value||'';
   if(!email||!password){ digitalDZSetMsg('loginMsg','Saisissez votre email et votre mot de passe.'); return; }
   try{
     digitalDZSetMsg('loginMsg','Connexion…');
     const cred=await digitalDZAuth.signInWithEmailAndPassword(email,password);
-    await digitalDZDb.collection('users').doc(cred.user.uid).set({
-      email:cred.user.email||email,
-      lastLogin:firebase.firestore.FieldValue.serverTimestamp()
-    },{merge:true});
+    try{
+      await digitalDZDb.collection('users').doc(cred.user.uid).set({
+        email:cred.user.email||email,
+        lastLogin:firebase.firestore.FieldValue.serverTimestamp()
+      },{merge:true});
+    }catch(dbErr){ console.warn('Profil Firestore non synchronisé',dbErr); }
     digitalDZSetMsg('loginMsg','Connexion réussie ✓');
   }catch(e){
     digitalDZSetMsg('loginMsg',digitalDZFirebaseError(e));
@@ -517,7 +524,10 @@ function digitalDZFirebaseError(e){
     'auth/invalid-credential':'Email ou mot de passe incorrect.',
     'auth/user-not-found':'Compte introuvable.',
     'auth/wrong-password':'Mot de passe incorrect.',
-    'auth/too-many-requests':'Trop de tentatives. Réessayez plus tard.'
+    'auth/too-many-requests':'Trop de tentatives. Réessayez plus tard.',
+    'auth/unauthorized-domain':'Domaine non autorisé par Firebase. Dans Firebase → Authentication → Paramètres → Domaines autorisés, ajoutez bbrahimbenali197-stack.github.io.',
+    'auth/operation-not-allowed':'La connexion par email/mot de passe n’est pas activée dans Firebase Authentication.',
+    'auth/network-request-failed':'Problème réseau. Vérifiez votre connexion Internet puis réessayez.'
   };
   return map[code]||('Erreur Firebase : '+(e?.message||code||'erreur inconnue'));
 }
