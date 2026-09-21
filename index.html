@@ -1,32 +1,65 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DIGITAL DZ — Formation digitale</title>
 <meta name="description" content="Formation pratique pour apprendre à créer et développer une activité en ligne depuis l'Algérie.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header><div class="logo">DIGITAL <b>DZ</b><small>Apprendre • Créer • Vendre • Réussir</small></div><a href="#programme">Programme</a></header>
+
 <section class="hero">
-<div><span class="tag">FORMATION DIGITALE</span><h1>Apprenez à créer des revenus en ligne, étape par étape.</h1>
-<p>Un programme pratique pour débutants, accessible depuis smartphone ou PC.</p>
-<a class="btn" href="#programme">Découvrir la formation</a></div>
-<div class="screen"><b>DIGITAL <i>DZ</i></b><span>Votre parcours digital commence ici.</span></div>
+  <div><span class="tag">FORMATION DIGITALE</span><h1>Apprenez à créer des revenus en ligne, étape par étape.</h1>
+  <p>Un programme pratique pour débutants, accessible depuis smartphone ou PC.</p>
+  <a class="btn" href="#programme">Découvrir la formation</a></div>
+  <div class="screen"><b>DIGITAL <i>DZ</i></b><span>Votre parcours digital commence ici.</span></div>
 </section>
+
 <section id="programme"><h2>Ce que vous allez recevoir</h2>
+<p class="intro">Cliquez sur une carte pour découvrir son contenu.</p>
 <div class="grid">
-<article><b>28</b><h3>Modules</h3><p>De la niche et des compétences jusqu'au marketing et à l'automatisation.</p></article>
-<article><b>160</b><h3>Tests interactifs</h3><p>Questions avec score pour vérifier votre progression.</p></article>
-<article><b>30+</b><h3>Prompts ChatGPT</h3><p>Prompts pratiques pour produire et gagner du temps.</p></article>
-<article><b>50</b><h3>Idées de produits digitaux</h3><p>Des pistes concrètes pour trouver une idée à tester.</p></article>
-<article><b>50</b><h3>Services freelance</h3><p>Idées de services à proposer en ligne.</p></article>
-<article><b>20</b><h3>Modèles Excel & Canva</h3><p>Des modèles pour organiser et produire plus vite.</p></article>
-<article><b>30/60/90</b><h3>Plan d'action</h3><p>Une feuille de route pour structurer votre progression.</p></article>
-<article><b>✓</b><h3>Projet final</h3><p>Un projet pratique et une attestation de progression.</p></article>
+  <button class="card" data-modal="modules"><b>28</b><h3>Modules</h3><p>De la niche et des compétences jusqu'au marketing et à l'automatisation.</p><span class="more">Voir les 28 modules →</span></button>
+  <button class="card" data-modal="tests"><b>160</b><h3>Tests interactifs</h3><p>Questions avec score pour vérifier votre progression.</p><span class="more">Voir le fonctionnement →</span></button>
+  <button class="card" data-modal="prompts"><b>30+</b><h3>Prompts ChatGPT</h3><p>Prompts pratiques pour produire et gagner du temps.</p><span class="more">Découvrir →</span></button>
+  <button class="card" data-modal="products"><b>50</b><h3>Idées de produits digitaux</h3><p>Des pistes concrètes pour trouver une idée à tester.</p><span class="more">Voir des exemples →</span></button>
+  <button class="card" data-modal="freelance"><b>50</b><h3>Services freelance</h3><p>Idées de services à proposer en ligne.</p><span class="more">Voir des exemples →</span></button>
+  <button class="card" data-modal="templates"><b>20</b><h3>Modèles Excel & Canva</h3><p>Des modèles pour organiser et produire plus vite.</p><span class="more">Découvrir →</span></button>
+  <button class="card" data-modal="roadmap"><b>30/60/90</b><h3>Plan d'action</h3><p>Une feuille de route pour structurer votre progression.</p><span class="more">Voir la feuille de route →</span></button>
+  <button class="card" data-modal="project"><b>✓</b><h3>Projet final</h3><p>Un projet pratique et une attestation de progression.</p><span class="more">Voir le projet →</span></button>
 </div></section>
+
 <section class="dark"><h2>Accessible partout</h2><div class="features"><div>📱<b>Smartphone</b><small>Apprenez depuis votre téléphone.</small></div><div>💻<b>PC</b><small>Travaillez avec vos outils habituels.</small></div><div>🌐<b>En ligne</b><small>Pas besoin de clé USB.</small></div><div>🚀<b>Pratique</b><small>Exercices et modèles prêts à utiliser.</small></div></div></section>
-<section class="cta"><h2>Commencez votre parcours DIGITAL DZ</h2><p>Scannez le QR code de votre carte pour ouvrir directement cette page.</p><a class="btn" href="#commande">Commander / Demander l'accès</a></section>
-<section id="commande" class="contact"><h2>Commande</h2><p>Ajoutez ici votre numéro WhatsApp avant la mise en vente.</p><div class="box">📲 WhatsApp : <b>NUMÉRO À AJOUTER</b><br>🚚 Paiement à la livraison selon votre offre.</div></section>
+
+<section class="cta"><h2>Commencez votre parcours DIGITAL DZ</h2><p>Le programme est accessible en ligne depuis votre smartphone ou votre PC.</p><a class="btn" href="#programme">Voir le programme</a></section>
+
 <footer>© 2026 DIGITAL DZ — Tous droits réservés.</footer>
-</body></html>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="close" aria-label="Fermer">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+const data = {
+modules:{title:'Les 28 modules DIGITAL DZ',content:`<ol class="module-list">
+<li>Comprendre les revenus en ligne</li><li>Choisir une niche rentable</li><li>Trouver une compétence monétisable</li><li>IA & ChatGPT comme assistant</li><li>Canva : créer des contenus professionnels</li><li>Créer son premier produit digital</li><li>50 idées de produits digitaux</li><li>Construire une offre qui vend</li><li>Pricing : fixer un prix sans brader</li><li>Vendre ses produits digitaux</li><li>Devenir freelance</li><li>50 services freelance</li><li>Portfolio professionnel</li><li>Facebook & communautés</li><li>Instagram : contenu & conversion</li><li>TikTok & vidéos courtes</li><li>WhatsApp Business & relation client</li><li>Créer un site simple</li><li>Marketing digital & tunnel de vente</li><li>SEO & recherche de mots-clés</li><li>Publicité en ligne</li><li>Contenu : créer une machine à publier</li><li>Email & fidélisation</li><li>Paiements, livraison numérique & conformité</li><li>Sécurité, arnaques & protection</li><li>Gestion financière & KPI</li><li>Automatisation & productivité</li><li>Challenge 30 jours + plan 90 jours</li></ol>`},
+tests:{title:'160 tests interactifs',content:`<p>Les tests servent à vérifier votre compréhension au fil de la formation.</p><ul><li>140 questions liées aux 28 modules</li><li>20 questions d'examen final</li><li>Score automatique</li><li>Explications après les réponses</li><li>Progression enregistrée sur l'appareil</li><li>Seuil indicatif de réussite : 70 %</li></ul><p class="note">La page interactive complète peut être ajoutée au même site pour permettre au client de passer les tests directement.</p>`},
+prompts:{title:'30+ prompts ChatGPT',content:`<p>Des prompts prêts à adapter pour gagner du temps.</p><ul><li>Recherche d'idées de produits</li><li>Création d'offres</li><li>Posts Facebook, Instagram et TikTok</li><li>Descriptions produits</li><li>Messages de prospection</li><li>Emails et réponses clients</li><li>Organisation et productivité</li></ul>`},
+products:{title:'50 idées de produits digitaux',content:`<p>Exemples de catégories à explorer :</p><ul><li>Guides PDF</li><li>Checklists</li><li>Modèles Excel</li><li>Templates Canva</li><li>Plannings</li><li>Documents professionnels</li><li>Mini-formations</li><li>Ressources pour entrepreneurs</li></ul><p class="note">L'objectif est de valider une idée auprès d'un public avant d'investir beaucoup de temps.</p>`},
+freelance:{title:'50 services freelance',content:`<p>Exemples de services :</p><ul><li>Saisie de données</li><li>Création de visuels Canva</li><li>Montage vidéo court</li><li>Gestion de réseaux sociaux</li><li>Rédaction</li><li>Transcription</li><li>Création de tableaux Excel</li><li>Assistance virtuelle</li></ul>`},
+templates:{title:'20 modèles Excel & Canva',content:`<p>Des modèles pour accélérer votre travail :</p><ul><li>Suivi des ventes</li><li>Budget</li><li>Suivi clients</li><li>Planning</li><li>Tableau KPI</li><li>Calendrier éditorial</li><li>Posts réseaux sociaux</li><li>Présentation d'offre</li></ul>`},
+roadmap:{title:'Plan 30 / 60 / 90 jours',content:`<div class="steps"><div><b>Jours 1–30</b><span>Choisir une niche, apprendre une compétence et préparer une première offre.</span></div><div><b>Jours 31–60</b><span>Créer, publier, prospecter et recueillir les premiers retours.</span></div><div><b>Jours 61–90</b><span>Améliorer l'offre, mesurer les résultats et structurer les processus.</span></div></div>`},
+project:{title:'Projet final',content:`<p>À la fin du parcours, vous construisez un petit projet concret.</p><ul><li>Choix d'une niche</li><li>Définition d'une offre</li><li>Création d'un support ou produit</li><li>Présentation de l'offre</li><li>Plan d'action</li></ul><p class="note">Une attestation de progression peut être délivrée selon les modalités de la formation. Elle ne constitue pas un diplôme officiel.</p>`}
+};
+const modal=document.getElementById('modal'), content=document.getElementById('modal-content');
+document.querySelectorAll('.card').forEach(card=>card.addEventListener('click',()=>{const d=data[card.dataset.modal];content.innerHTML='<h2>'+d.title+'</h2>'+d.content;modal.classList.add('open');modal.setAttribute('aria-hidden','false');}));
+document.querySelector('.close').onclick=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')};
+modal.addEventListener('click',e=>{if(e.target===modal)document.querySelector('.close').click()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))document.querySelector('.close').click()});
+</script>
+</body>
+</html>
