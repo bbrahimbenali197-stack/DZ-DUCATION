@@ -1,0 +1,19 @@
+{
+  "name": "TAALIM DZ — نتعلم وننجح",
+  "short_name": "TAALIM DZ",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f8fc",
+  "theme_color": "#0b6bcb",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

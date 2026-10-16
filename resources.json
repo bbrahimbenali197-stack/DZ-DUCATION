@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fractions",
+    "title": "درس الرياضيات: الكسور",
+    "stage": "ابتدائي",
+    "subject": "رياضيات",
+    "type": "cours",
+    "desc": "شرح مبسّط، أمثلة وتمارين مع الحل.",
+    "file": "pdf/dars_ksour.pdf",
+    "label": "درس + تمارين مصحّحة"
+  },
+  {
+    "id": "bem-maths",
+    "title": "اختبار تدريبي BEM في الرياضيات",
+    "stage": "متوسط",
+    "subject": "رياضيات",
+    "type": "examen",
+    "desc": "نموذج تدريب أصلي مع التصحيح المفصّل.",
+    "file": "pdf/bem_maths_corrige.pdf",
+    "label": "موضوع + تصحيح"
+  },
+  {
+    "id": "bac-maths",
+    "title": "اختبار تدريبي BAC في الرياضيات",
+    "stage": "ثانوي",
+    "subject": "رياضيات",
+    "type": "examen",
+    "desc": "تمارين في الدوال والاشتقاق والمعادلات مع الحل.",
+    "file": "pdf/bac_maths_corrige.pdf",
+    "label": "موضوع + تصحيح"
+  }
+]
