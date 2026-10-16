@@ -1,5 +1,32 @@
-TAALIM DZ — Version Plus
-1) Décompressez cette archive.
-2) Ouvrez index.html pour consulter le site.
-3) Pour le mode hors connexion, publiez en HTTPS via GitHub Pages.
-4) Lisez README.md pour les fonctions et limites.
+TAALIM DZ — version enrichie
+
+1) Décompressez cette archive et ouvrez index.html.
+2) kids.html : espace enfants, mini-jeu et liens éducatifs YouTube.
+3) teachers.html : formulaire de proposition de cours avec lien de réunion externe.
+4) admin.html : annonces et nouveautés locales, export JSON.
+5) community.html : démonstration d’un fil de discussion local.
+6) Publiez sur GitHub Pages pour activer le mode hors connexion.
+
+Important : sans base de données, les annonces, cours et messages restent dans le navigateur local et ne sont pas visibles par les autres visiteurs. Le panneau admin n’est pas sécurisé. Pour une messagerie réelle, des annonces partagées et des cours ouverts à tous, il faut un serveur ou un service externe. Les vidéos YouTube sont des liens de recherche à vérifier par un adulte.
+
+
+NOUVEAUTÉS DE CETTE VERSION
+- Espace enseignants : création d'un support de cours structuré, ajout d'un lien de classe en ligne, export HTML autonome, impression et sauvegarde locale d'un brouillon.
+- Page offres.html : présentation des formules possibles avant commercialisation. Les prix et le paiement restent à configurer.
+- Le cache hors connexion est mis à jour en version v6.
+
+IMPORTANT AVANT LA VENTE
+GitHub Pages seul ne protège pas les codes d'accès contre l'inspection des fichiers et ne gère pas les paiements. La messagerie et les annonces locales ne sont pas partagées entre utilisateurs. Un vrai système d'abonnement, des cours synchronisés et une messagerie privée nécessitent un service externe ou un backend.
+
+FORMULES COMMERCIALES
+La page offres.html présente des modèles de formules (code mensuel, trimestre, année, famille, cadeau, BEM/BAC et cours en ligne). Les prix affichés sont des suggestions en DA à valider, pas des tarifs activés. Aucun paiement ni création automatique de code n'est connecté. Avant la vente, connecter une authentification fiable, la gestion des expirations et une solution de paiement.
+
+
+VERSION FINALE — CONTACT, PLANNING ET COURS EN LIGNE
+- contact.html : prépare un message WhatsApp après saisie du numéro professionnel; aucun numéro n’a été inventé.
+- planning.html : modèle statique de planning, à mettre à jour manuellement dans GitHub.
+- cours-en-ligne.html : page d’information pour les cours à distance; les liens privés sont à transmettre directement aux familles.
+- offres.html : explique le parcours de paiement manuel et la remise du code après vérification.
+- Aucune base de données n’est utilisée. Les messages ne sont pas stockés sur le site et les cours ne sont pas synchronisés automatiquement.
+- AVANT PUBLICATION : configurez le numéro professionnel dans contact.html ou fournissez-le à l’administrateur; remplacez les séances d’exemple par les vraies dates; vérifiez les tarifs et les conditions de vente.
+- Limite importante : GitHub Pages ne protège pas les PDF ou les codes intégrés au JavaScript. N’utilisez pas cette version pour promettre une protection forte des contenus payants. Vérifiez également que l’usage commercial prévu respecte les conditions de votre hébergeur.
