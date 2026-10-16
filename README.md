@@ -1,61 +1,31 @@
-# TAALIM DZ — prêt pour GitHub Pages
+# TAALIM DZ — Version Excellence
 
-Site éducatif statique, en arabe (RTL), sans base de données, sans compte et sans frais de serveur nécessaires. Il peut être publié publiquement avec GitHub Pages.
+Plateforme éducative statique, en arabe RTL, conçue pour GitHub Pages sans base de données.
 
 ## Fonctionnalités
-- Interface responsive pour téléphone, tablette et ordinateur.
-- Bibliothèque de ressources filtrable (niveau, matière, type et recherche).
-- Cours et PDF d'entraînement avec corrigés.
-- Quiz avec correction immédiate et historique local des scores.
-- Planificateur de révision avec tâches cochables/supprimables.
-- Export manuel des progrès en JSON et impression.
-- Mode sombre.
-- PWA de base : manifeste et cache hors ligne pour les fichiers inclus.
-- Pas de collecte de compte, de mot de passe ni de code d'accès.
+- 13 entrées de niveau (primaire, moyen, secondaire, BEM et BAC) et filtrage par cycle.
+- Navigation par matière avec liens de recherche externes spécialisés.
+- Bibliothèque filtrable; trois PDF locaux intégrés.
+- Quiz interactif avec feedback et explication immédiate.
+- Examen d'entraînement chronométré avec correction et résultat.
+- Cartes de révision, planificateur de tâches, suivi local, thème sombre, export JSON, impression et PWA/cache hors ligne de base.
+- Pas de comptes, mots de passe, backend ou base de données.
 
 ## Publier sur GitHub Pages
-1. Crée un compte sur https://github.com si nécessaire.
-2. Crée un nouveau dépôt public, par exemple `taalim-dz`.
-3. Décompresse cette archive et téléverse **tous les fichiers et dossiers à la racine du dépôt** (`index.html`, `app.js`, `resources.json`, `manifest.webmanifest`, `sw.js`, `icon.svg`, `pdf/`).
-4. Dans le dépôt, ouvre **Settings → Pages**.
-5. Dans **Build and deployment**, choisis **Deploy from a branch**.
-6. Choisis la branche `main` et le dossier `/(root)`, puis clique **Save**.
-7. Attends le déploiement indiqué dans l'onglet Actions ou Settings → Pages. L'adresse sera du type `https://TON-NOM.github.io/taalim-dz/`.
-8. Ouvre l'adresse HTTPS et teste les filtres, PDF, quiz et planificateur.
+1. Créez un dépôt GitHub public, par exemple `taalim-dz`.
+2. Téléversez **le contenu** de ce dossier à la racine du dépôt (`index.html`, `app.js`, `pdf/`, etc.).
+3. Ouvrez Settings → Pages → Build and deployment → Deploy from a branch.
+4. Choisissez la branche `main`, le dossier `/(root)`, puis Save.
+5. Attendez le déploiement; GitHub affichera l'URL publique.
 
-Si tu utilises un dépôt `TON-NOM.github.io`, l'adresse sera `https://TON-NOM.github.io/`.
+## Limites à connaître
+Cette version est fonctionnelle comme site statique mais **ne contient pas encore tous les cours et examens de chaque année**. Elle inclut seulement trois PDF locaux. Les autres ressources ouvrent des recherches externes et ne sont ni hébergées ni vérifiées par TAALIM DZ. Ajoutez des documents vérifiés, autorisés à la redistribution et correctement corrigés avant de présenter la bibliothèque comme exhaustive.
 
-## Ajouter un cours ou un examen
-1. Ajoute le fichier PDF au dossier `pdf/`.
-2. Ouvre `resources.json` et ajoute un objet dans le tableau, par exemple :
-   {
-     "id": "exam-francais-1am",
-     "title": "Examen de français — 1AM",
-     "stage": "متوسط",
-     "subject": "Français",
-     "type": "examen",
-     "desc": "Sujet d'entraînement et corrigé.",
-     "file": "pdf/exam-francais-1am.pdf",
-     "label": "Sujet + corrigé"
-   }
-3. Si tu ajoutes une matière, ajoute-la aussi dans la liste du filtre `subjectFilter` dans `index.html`.
-4. Enregistre et pousse les changements vers GitHub. GitHub Pages republiera automatiquement.
+Les tâches, préférences, ressources sauvegardées et résultats sont conservés dans `localStorage` du navigateur. Ils ne se synchronisent pas entre appareils et peuvent être effacés par la suppression des données du navigateur. Un espace sécurisé avec comptes et synchronisation nécessiterait un service backend, ce qui n'est pas inclus.
 
-## Limites honnêtes d'un site sans base de données
-- Le progrès est sauvegardé dans le navigateur de chaque visiteur avec `localStorage`; il ne se synchronise pas entre appareils.
-- Il n'y a pas d'espace administrateur sécurisé. Le contenu du site se gère en modifiant les fichiers dans le dépôt GitHub.
-- Le « فضاء الأولياء » explique l'export manuel du progrès ; un parent peut consulter le fichier qu'on lui partage, mais ne peut pas consulter les données d'un enfant à distance automatiquement.
-- Les fichiers publics peuvent être téléchargés par tout le monde.
-- Le service worker et l'installation PWA nécessitent HTTPS, comme fourni par GitHub Pages.
-- Le cache hors ligne est best-effort ; la première visite doit charger les fichiers au moins une fois.
-- Les trois PDF inclus sont des exemples pédagogiques originaux, pas des examens officiels complets. Vérifie les droits et la qualité des documents que tu ajoutes.
+## Ajouter un PDF
+1. Placez le PDF dans `pdf/`.
+2. Ajoutez une entrée dans `resources` au début de `app.js`, avec un titre, un `level` correspondant à un identifiant dans `levels`, une matière, un type et le chemin du fichier.
+3. Vérifiez le PDF, le lien et les droits d'utilisation.
 
-## Sécurité et confidentialité
-Aucun secret, clé API, code parent ou mot de passe n'est intégré au site. N'ajoute jamais de clé secrète à un dépôt public. Les données locales peuvent être supprimées si l'utilisateur efface les données du navigateur. Le site ne promet pas de synchronisation ni d'authentification qu'il ne possède pas.
-
-## Fichiers principaux
-- `index.html` : interface et sections
-- `app.js` : recherche, quiz, tâches, export et thème
-- `resources.json` : catalogue des ressources
-- `pdf/` : documents
-- `manifest.webmanifest`, `sw.js`, `icon.svg` : fonctions PWA
+Les questions intégrées sont des exemples pédagogiques originaux, pas des sujets officiels. Vérifiez le programme et les matières pour chaque filière avant usage public.

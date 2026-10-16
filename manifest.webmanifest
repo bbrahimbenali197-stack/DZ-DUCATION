@@ -1,19 +1,17 @@
 {
-  "name": "TAALIM DZ — نتعلم وننجح",
+  "name": "TAALIM DZ",
   "short_name": "TAALIM DZ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#101b35",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f4f8fc",
-  "theme_color": "#0b6bcb",
   "icons": [
     {
-      "src": "./icon.svg",
+      "src": "icon.svg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/svg+xml"
     }
   ]
 }

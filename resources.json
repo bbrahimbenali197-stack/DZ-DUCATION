@@ -1,32 +1,58 @@
 [
   {
-    "id": "fractions",
     "title": "درس الرياضيات: الكسور",
-    "stage": "ابتدائي",
-    "subject": "رياضيات",
-    "type": "cours",
-    "desc": "شرح مبسّط، أمثلة وتمارين مع الحل.",
-    "file": "pdf/dars_ksour.pdf",
-    "label": "درس + تمارين مصحّحة"
+    "level": "1ap",
+    "subject": "الرياضيات",
+    "type": "درس",
+    "file": "pdf/dars_ksour.pdf"
   },
   {
-    "id": "bem-maths",
     "title": "اختبار تدريبي BEM في الرياضيات",
-    "stage": "متوسط",
-    "subject": "رياضيات",
-    "type": "examen",
-    "desc": "نموذج تدريب أصلي مع التصحيح المفصّل.",
-    "file": "pdf/bem_maths_corrige.pdf",
-    "label": "موضوع + تصحيح"
+    "level": "bem",
+    "subject": "الرياضيات",
+    "type": "امتحان مع تصحيح",
+    "file": "pdf/bem_maths_corrige.pdf"
   },
   {
-    "id": "bac-maths",
     "title": "اختبار تدريبي BAC في الرياضيات",
-    "stage": "ثانوي",
-    "subject": "رياضيات",
-    "type": "examen",
-    "desc": "تمارين في الدوال والاشتقاق والمعادلات مع الحل.",
-    "file": "pdf/bac_maths_corrige.pdf",
-    "label": "موضوع + تصحيح"
+    "level": "bac",
+    "subject": "الرياضيات",
+    "type": "امتحان مع تصحيح",
+    "file": "pdf/bac_maths_corrige.pdf"
+  },
+  {
+    "title": "البحث عن الدروس والملخصات",
+    "level": "all",
+    "subject": "كل المواد",
+    "type": "درس",
+    "external": "درس ملخصات"
+  },
+  {
+    "title": "البحث عن التمارين المحلولة",
+    "level": "all",
+    "subject": "كل المواد",
+    "type": "تمارين",
+    "external": "تمارين محلولة"
+  },
+  {
+    "title": "البحث عن الفروض والاختبارات",
+    "level": "all",
+    "subject": "كل المواد",
+    "type": "فروض واختبارات",
+    "external": "فروض اختبارات"
+  },
+  {
+    "title": "مواضيع BEM مع التصحيح",
+    "level": "bem",
+    "subject": "كل المواد",
+    "type": "امتحان مع تصحيح",
+    "external": "مواضيع BEM مع التصحيح"
+  },
+  {
+    "title": "مواضيع BAC مع التصحيح",
+    "level": "bac",
+    "subject": "كل المواد",
+    "type": "امتحان مع تصحيح",
+    "external": "مواضيع BAC مع التصحيح"
   }
 ]
