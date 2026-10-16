@@ -1,6 +1,6 @@
-const CACHE='taalim-dz-v7';
+const CACHE='taalim-dz-v8';
 const SHELL=[
- './','./index.html','./contact.html','./planning.html','./cours-en-ligne.html','./offres.html','./kids.html','./admin.html','./teachers.html','./community.html','./access.html','./levels.html','./library.html','./videos.html','./practice.html','./exam.html',
+ './','./index.html','./home.html','./contact.html','./planning.html','./cours-en-ligne.html','./offres.html','./kids.html','./admin.html','./teachers.html','./community.html','./access.html','./levels.html','./library.html','./videos.html','./practice.html','./exam.html',
  './flashcards.html','./planner.html','./parents.html','./sources.html','./help.html',
  './gamification.html','./games.html','./pathway.html','./ai-tutor.html','./worksheet-maker.html','./offline.html',
  './app.js','./features.js','./auth.js','./resources.js','./resources.json','./icon.svg','./manifest.webmanifest'
