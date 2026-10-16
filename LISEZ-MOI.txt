@@ -1,5 +1,5 @@
-TAALIM DZ — Version Excellence
-
-Ouvrez index.html pour tester le site localement. Pour la publication en ligne, téléversez tous les fichiers du dossier à la racine de votre dépôt GitHub puis activez GitHub Pages dans Settings > Pages.
-
-Important : le site comprend actuellement trois PDF locaux. Les liens complémentaires ouvrent des recherches externes. Les progrès et tâches sont enregistrés uniquement dans le navigateur, sans compte ni base de données.
+TAALIM DZ — Version Plus
+1) Décompressez cette archive.
+2) Ouvrez index.html pour consulter le site.
+3) Pour le mode hors connexion, publiez en HTTPS via GitHub Pages.
+4) Lisez README.md pour les fonctions et limites.
