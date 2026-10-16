@@ -30,3 +30,6 @@ VERSION FINALE — CONTACT, PLANNING ET COURS EN LIGNE
 - Aucune base de données n’est utilisée. Les messages ne sont pas stockés sur le site et les cours ne sont pas synchronisés automatiquement.
 - AVANT PUBLICATION : configurez le numéro professionnel dans contact.html ou fournissez-le à l’administrateur; remplacez les séances d’exemple par les vraies dates; vérifiez les tarifs et les conditions de vente.
 - Limite importante : GitHub Pages ne protège pas les PDF ou les codes intégrés au JavaScript. N’utilisez pas cette version pour promettre une protection forte des contenus payants. Vérifiez également que l’usage commercial prévu respecte les conditions de votre hébergeur.
+
+
+Organisation finale des espaces : la page access.html demande d’abord le profil (élève, parent, enseignant), puis un code. L’élève arrive sur student.html ; les parents sur parents.html ; les enseignants sur teachers.html. Codes de démonstration configurés dans auth.js : élève primaire DZ-PRI-7K4M-26, collège DZ-COL-9P2X-26, lycée DZ-LYC-5R8N-26, parent DZ-PAR-4M8Q-26, enseignant DZ-PROF-6T2W-26. Remplace-les avant diffusion. Important : le contrôle est côté navigateur et n’offre pas une vraie protection des fichiers.

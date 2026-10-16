@@ -58,3 +58,12 @@ La page `offres.html` propose des modèles de vente : code mensuel, pass trimest
 - `offres.html` : vente manuelle; le paiement est confirmé par l’administration et le code est envoyé manuellement.
 
 Aucune base de données ni paiement en ligne n’est intégré. Les annonces, cours et messages ne sont pas partagés automatiquement entre visiteurs. Le contenu statique et les PDF d’un dépôt public ne sont pas protégés par un code JavaScript.
+
+
+## Parcours d'accès et limites importantes
+
+- Le dépôt utilise une page d'accès qui demande de choisir un profil (élève, parent ou professeur) puis un code. La page d'accueil racine redirige vers le profil correspondant.
+- Cette vérification est réalisée en JavaScript dans le navigateur : elle améliore l'organisation du parcours, mais **ne protège pas réellement des contenus payants**. Ne publiez pas de documents confidentiels ou dont l'accès doit être strictement réservé.
+- Les données locales (planning, scores, favoris) restent sur l'appareil et ne sont pas synchronisées entre plusieurs personnes ou appareils.
+- Les cours en ligne doivent utiliser un lien de visioconférence externe. Pour une messagerie partagée et des abonnements sécurisés, il faudra un service externe avec contrôle d'accès côté serveur.
+- Avant de publier, vérifiez `auth.js`, le dossier `pdf/` et les liens depuis un téléphone. Après mise à jour, faites un rechargement forcé ou videz le cache du navigateur si l'ancienne version reste affichée.
